@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Network</title>
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <style type="text/css">
+      #mynetwork {
+        width: 100%;
+        height: 1000px;
+        border: 1px solid rgb(0, 0, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="mynetwork"></div>
+  </body>
+</html>
+<script type="text/javascript">
+  // create an array with nodes
+  var nodes = new vis.DataSet([
+    { id: 1, label: "A" },
+    { id: 2, label: "B" },
+    { id: 3, label: "C" },
+    { id: 4, label: "D" },
+    { id: 5, label: "E" },
+    { id: 6, label: "F" },
+    { id: 7, label: "G" },
+    { id: 8, label: "H" },
+    { id: 9, label: "I" },
+    { id: 10, label: "J" },
+    { id: 11, label: "K" },
+    { id: 12, label: "L" },
+    { id: 13, label: "M" },
+    { id: 14, label: "N" },
+  ]);
+  // create an array with edges
+  var edges = new vis.DataSet([
+    { from: 1, to: 2, label: "e1" },
+    { from: 2, to: 3, label: "e2" },
+    { from: 3, to: 4, label: "e3" },
+    { from: 4, to: 5, label: "e4" },
+    { from: 5, to: 6, label: "e5" },
+    { from: 6, to: 7, label: "e6" },
+    { from: 7, to: 8, label: "e7" },
+    { from: 8, to: 9, label: "e8" },
+    { from: 9, to: 10, label: "e9" },
+    { from: 10, to: 11, label: "e10" },
+    { from: 11, to: 12, label: "e11" },
+    { from: 12, to: 13, label: "e12" },
+    { from: 13, to: 14, label: "e13" },
+  ]);
+
+  // create a network
+  var container = document.getElementById("mynetwork");
+  var data = {
+    nodes: nodes,
+    edges: edges,
+  };
+  var options = {};
+  var network = new vis.Network(container, data, options);
+</script>
